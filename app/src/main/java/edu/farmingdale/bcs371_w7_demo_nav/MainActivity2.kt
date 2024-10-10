@@ -101,11 +101,6 @@ fun BasicOperations(name: String, modifier: Modifier = Modifier) {
             modifier = Modifier.padding(10.dp),
         )
         // ToDo 6: when the switch is off, disable the buttons
-        Switch(
-            checked = false,
-            onCheckedChange = {  },
-            modifier = Modifier.padding(10.dp),
-        )
     }
 
 
