@@ -48,27 +48,20 @@ fun Navigation() {
         composable("splash_screen"
         ) {
             SpalshScreen(navController)
-
         }
-
         composable("first_screen"
         ) {
             FirstScreen(navController)
 
         }
-
-
         composable("second_screen") {
             SecondScreen(navController)
         }
-
         // ToDo 7: Add more nav screens here for the pizza party and gpa calculator
 
 
     }
-
 }
-
 @Composable
 fun FirstScreen(navController: NavController) {
     Box (contentAlignment = Alignment.Center){
@@ -84,9 +77,6 @@ fun FirstScreen(navController: NavController) {
         }
     }
 }
-
-
-
 
 @Composable
 fun SecondScreen(navController: NavController) {
