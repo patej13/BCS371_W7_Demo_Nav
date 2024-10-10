@@ -52,6 +52,8 @@ class MainActivity2 : ComponentActivity() {
 @Composable
 fun BasicOperations(name: String, modifier: Modifier = Modifier) {
     val  context = LocalContext.current
+    var checked by remember { mutableStateOf(true) }
+
 
     Column {
         Spacer(modifier = Modifier.padding(50.dp))
@@ -60,7 +62,7 @@ fun BasicOperations(name: String, modifier: Modifier = Modifier) {
             newInt.setData(Uri.parse("geo:0,0?q=Farmingdale State College, NY"))
             context.startActivity(newInt)
         },
-            modifier= Modifier.padding(start = 40.dp, end = 40.dp)) {
+            modifier= Modifier.padding(start = 40.dp, end = 40.dp), enabled = checked) {
             Icon( imageVector = Icons.Default.LocationOn, contentDescription = "Location")
             Text("Show me  Farmingdale",Modifier.padding(start = 10.dp))
         }
@@ -72,7 +74,7 @@ fun BasicOperations(name: String, modifier: Modifier = Modifier) {
             context.startActivity(newInt)
             // ToDo 1: create implicit intent to open a web page or call a phone number
         },
-            modifier= Modifier.padding(start = 40.dp, end = 40.dp)) {
+            modifier= Modifier.padding(start = 40.dp, end = 40.dp), enabled = checked) {
             Icon( imageVector = Icons.Default.Phone, contentDescription = "Phone")
             Text("Call Me", Modifier.padding(start = 10.dp))
         }
@@ -83,7 +85,7 @@ fun BasicOperations(name: String, modifier: Modifier = Modifier) {
             // ToDo 2: create explicit intent to open a new activity
             context.startActivity(Intent(context, MainActivity::class.java))
         },
-            modifier= Modifier.padding(start = 40.dp, end = 40.dp)) {
+            modifier= Modifier.padding(start = 40.dp, end = 40.dp), enabled = checked) {
             Icon( imageVector = Icons.Default.Info, contentDescription = "Phone")
             Text("Go To activity 2",  modifier = Modifier.padding(start = 10.dp))
         }
@@ -94,11 +96,16 @@ fun BasicOperations(name: String, modifier: Modifier = Modifier) {
 
         // ToDo 5: This switch is not working fix it
         Switch(
-            checked = true,
-            onCheckedChange = {  },
+            checked = checked,
+            onCheckedChange = {checked = it},
             modifier = Modifier.padding(10.dp),
         )
         // ToDo 6: when the switch is off, disable the buttons
+        Switch(
+            checked = false,
+            onCheckedChange = {  },
+            modifier = Modifier.padding(10.dp),
+        )
     }
 
 
