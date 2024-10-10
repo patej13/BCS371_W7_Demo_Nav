@@ -57,6 +57,12 @@ fun Navigation() {
         composable("second_screen") {
             SecondScreen(navController)
         }
+        composable("gpa_screen") {
+            gpaappFun(navController)
+        }
+        composable("pizza_screen") {
+            PizzaPartyScreen(navController)
+        }
         // ToDo 7: Add more nav screens here for the pizza party and gpa calculator
 
 
