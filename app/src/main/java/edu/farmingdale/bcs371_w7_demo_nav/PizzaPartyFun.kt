@@ -75,7 +75,9 @@ fun PizzaPartyScreen(navController: NavController,modifier: Modifier = Modifier)
         ) {
             Text("Calculate")
         }
-
+        Button(onClick = { navController.navigate("gpa_screen") }) {
+            Text(text ="Go to GPA Screen")
+        }
     }
 }
 

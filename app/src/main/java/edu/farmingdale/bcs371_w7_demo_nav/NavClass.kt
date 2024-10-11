@@ -101,6 +101,12 @@ fun SecondScreen(navController: NavController) {
         Button(onClick = { context.startActivity(Intent(context, MainActivity2::class.java)) }) {
             Text(fontSize = 20.sp, text ="Go to other Activity")
         }
+        Button(onClick = { navController.navigate("pizza_screen") }) {
+            Text(text ="Go to Pizza Screen")
+        }
+        Button(onClick = { navController.navigate("gpa_screen") }) {
+            Text(text ="Go to GPA Screen")
+        }
         Switch(
             checked = checked,
             onCheckedChange = {checked = it},
