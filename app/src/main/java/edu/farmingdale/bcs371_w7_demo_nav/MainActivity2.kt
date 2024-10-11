@@ -70,7 +70,7 @@ fun BasicOperations(name: String, modifier: Modifier = Modifier) {
 
         Button( onClick = {
             val newInt = Intent(Intent.ACTION_VIEW)
-            newInt.setData(Uri.parse("tel.9393993921"))
+            newInt.setData(Uri.parse("tel:9393993921"))
             context.startActivity(newInt)
             // ToDo 1: create implicit intent to open a web page or call a phone number
         },
