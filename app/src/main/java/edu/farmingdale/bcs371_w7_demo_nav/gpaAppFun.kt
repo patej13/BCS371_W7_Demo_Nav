@@ -76,7 +76,9 @@ fun gpaappFun(navController: NavController) {
         }) {
             Text(btnLabel)
         }
-
+        Button(onClick = { navController.navigate("first_screen") }) {
+            Text(text ="Go back to First Screen")
+        }
 
         if (gpa.isNotEmpty()) {
             Text(text = "GPA: $gpa")
